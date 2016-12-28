@@ -1,0 +1,114 @@
+#include "resource.h"
+
+
+
+IDI_MYSMALLICON ICON "Ismall.ico"
+IDI_MYBIGICON ICON "Ibig.ico"
+
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 2 资源生成。
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 菜单
+//
+
+IDC_MENU MENU
+BEGIN
+POPUP "菜单(&M)"
+	BEGIN
+	MENUITEM "添加区队(&A)"				IDM_ADD
+//	MENUITEM "选择的区队(&C)"				IDM_CHOOSE
+	MENUITEM "区队重置(&R)"				IDM_RESETCLASS
+	MENUITEM "删除区队(&D)"				IDM_DELETE
+	MENUITEM "退出(&X)",				IDM_EXIT
+	END
+POPUP "帮助(&H)"
+	BEGIN
+	MENUITEM "帮助(&H)"					IDM_HELP
+	MENUITEM "关于(&A) ...",			IDM_ABOUT
+	END
+END
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 关于窗口
+//
+
+IDD_ABOUTBOX DIALOGEX 90, 60, 170, 74
+STYLE WS_VISIBLE | WS_CAPTION | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "关于 随机数 程序"
+FONT 9, "MS Shell Dlg"
+BEGIN
+	//ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+	LTEXT           "学校：浙江警察学院", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+	LTEXT			"技术支持：15网一", IDC_STATIC, 42, 26, 114, 8
+	LTEXT           "Copyright (C) 2016", IDC_STATIC, 42, 38, 114, 8
+	DEFPUSHBUTTON   "确定", IDOK, 113, 53, 50, 14, WS_GROUP
+END
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+//
+// 帮助窗口
+//
+
+IDD_HELPBOX DIALOGEX 5, 25, 370, 86
+STYLE WS_VISIBLE | WS_CAPTION | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "使用帮助"
+FONT 9, "MS Shell Dlg"
+BEGIN
+//ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "添加区队：点击菜单，添加需要的区队，需要填写1号同学的学号和班级的人数", IDC_STATIC, 42, 14, 300, 38, SS_NOPREFIX
+LTEXT           "删除区队：在下拉菜单选择已经包含的区队，再点击菜单栏里的删除区队按钮", IDC_STATIC, 42, 26, 300, 38
+LTEXT           "区队重置：在下拉菜单选择已经包含的区队，再点击菜单栏里的区队重置按钮", IDC_STATIC, 42, 38, 300, 38
+LTEXT           "ps:建议把文件放在其他目录下，然后再创建一个快捷方式至桌面", IDC_STATIC, 42, 50, 300, 38
+DEFPUSHBUTTON   "确定", IDOK, 303, 65, 50, 14, WS_GROUP
+END
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 对话框
+//
+
+IDD_ADDBOX DIALOGEX 10, 10, 171, 144
+STYLE WS_VISIBLE | WS_CAPTION | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "添加区队"
+FONT 9, "MS Shell Dlg"
+BEGIN
+	CONTROL "", IDC_EDT1, "Edit", WS_CHILDWINDOW | WS_VISIBLE | WS_TABSTOP, 63, 18, 81, 15, WS_EX_CLIENTEDGE
+	CONTROL "区队", IDC_STC1, "Static", WS_CHILDWINDOW | WS_VISIBLE, 21, 21, 36, 12
+	CONTROL "学号开始", IDC_STC2, "Static", WS_CHILDWINDOW | WS_VISIBLE, 21, 45, 39, 12
+	CONTROL "", IDC_EDT2, "Edit", WS_CHILDWINDOW | WS_VISIBLE | WS_TABSTOP, 63, 42, 81, 15, WS_EX_CLIENTEDGE
+	CONTROL "总人数", IDC_STC3, "Static", WS_CHILDWINDOW | WS_VISIBLE, 21, 69, 33, 9
+	CONTROL "", IDC_EDT3, "Edit", WS_CHILDWINDOW | WS_VISIBLE | WS_TABSTOP, 63, 66, 81, 15, WS_EX_CLIENTEDGE
+//	CONTROL "确认", IDC_BTN1, "Button", WS_CHILDWINDOW | WS_VISIBLE | WS_TABSTOP, 18, 99, 60, 21
+//	CONTROL "取消", IDC_BTN2, "Button", WS_CHILDWINDOW | WS_VISIBLE | WS_TABSTOP, 87, 99, 60, 21
+	DEFPUSHBUTTON   "确认", ID_OK, 18, 99, 60, 21, WS_GROUP
+	DEFPUSHBUTTON   "取消", ID_NO, 87, 99, 60, 21, WS_GROUP
+
+	//ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+	//LTEXT           "test，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+	//LTEXT           "Copyright (C) 2016",IDC_STATIC,42,26,114,8
+	//
+END
+
+/////////////////////////////////////////////////////////////////////////////
+
